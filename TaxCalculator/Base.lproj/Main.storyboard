@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gold_bg" translatesAutoresizingMaskIntoConstraints="NO" id="8zG-qg-QKr">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="itemPrice" textAlignment="center" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ive-z7-cfa">
+                                <rect key="frame" x="235" y="60" width="130" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FO9-U5-Ers"/>
+                                    <constraint firstAttribute="width" constant="130" id="ThE-fY-pWJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="47n-pd-79h"/>
+                                </connections>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="XDv-oP-2M6">
+                                <rect key="frame" x="155" y="120" width="290" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="Zbh-2x-jqM"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="CA"/>
+                                    <segment title="CHI"/>
+                                    <segment title="NY"/>
+                                </segments>
+                                <color key="tintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xro-12-jdh">
+                                <rect key="frame" x="225" y="178" width="150" height="35"/>
+                                <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="2oN-R2-dgP"/>
+                                    <constraint firstAttribute="width" constant="150" id="zM9-tm-AQG"/>
+                                </constraints>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Calculate Tax">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onCalculateButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="7Wm-hr-beg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total +Tax:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uat-GM-JJW">
+                                <rect key="frame" x="131" y="243" width="338" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="9LD-AP-Wfa"/>
+                                    <constraint firstAttribute="width" constant="338" id="H8P-IE-1A7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xro-12-jdh" firstAttribute="centerX" secondItem="uat-GM-JJW" secondAttribute="centerX" id="0he-yx-CWb"/>
+                            <constraint firstItem="Xro-12-jdh" firstAttribute="centerX" secondItem="XDv-oP-2M6" secondAttribute="centerX" id="8rJ-B5-e3g"/>
+                            <constraint firstItem="ive-z7-cfa" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="40" id="9bU-Vc-ORH"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="8zG-qg-QKr" secondAttribute="bottom" id="9bk-Ui-xBw"/>
+                            <constraint firstItem="XDv-oP-2M6" firstAttribute="top" secondItem="ive-z7-cfa" secondAttribute="bottom" constant="30" id="Ay6-45-RyO"/>
+                            <constraint firstAttribute="centerX" secondItem="ive-z7-cfa" secondAttribute="centerX" id="Bc6-wM-uDP"/>
+                            <constraint firstItem="8zG-qg-QKr" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="Dyv-v5-D3l"/>
+                            <constraint firstItem="XDv-oP-2M6" firstAttribute="centerX" secondItem="ive-z7-cfa" secondAttribute="centerX" id="JqR-i7-lvA"/>
+                            <constraint firstAttribute="trailing" secondItem="8zG-qg-QKr" secondAttribute="trailing" id="ZoC-ko-RhO"/>
+                            <constraint firstItem="uat-GM-JJW" firstAttribute="top" secondItem="Xro-12-jdh" secondAttribute="bottom" constant="30" id="blj-Zb-Kjf"/>
+                            <constraint firstItem="Xro-12-jdh" firstAttribute="top" secondItem="XDv-oP-2M6" secondAttribute="bottom" constant="30" id="nom-kM-Ivq"/>
+                            <constraint firstItem="8zG-qg-QKr" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="sa5-74-AB7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="myButton" destination="Xro-12-jdh" id="x7r-r5-e92"/>
+                        <outlet property="priceTextField" destination="ive-z7-cfa" id="BBi-4f-kvz"/>
+                        <outlet property="resultLabel" destination="uat-GM-JJW" id="PNL-fp-Dj0"/>
+                        <outlet property="segmentedControl" destination="XDv-oP-2M6" id="Jbd-Wi-BO6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gold_bg" width="160" height="284"/>
+    </resources>
+</document>
